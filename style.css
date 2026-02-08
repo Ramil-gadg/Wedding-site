@@ -152,8 +152,10 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 80px;
   padding: 0 4px;
+  position: relative;
+  z-index: 2;
 }
 
 .quote {
@@ -179,45 +181,104 @@ body {
   text-align: right;
 }
 
-/* Фото: два рядом, «вырезанный» мягкий розовый контур (скрапбук) */
-.photos {
+/* Фото в стиле фотоплёнки / полароид: под углом, белая подложка, имена снизу */
+.photos.polaroid-strip {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 0;
+  align-items: center;
+  gap: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 16px 12px;
+  position: relative;
+  z-index: 1;
 }
 
-.photo-cutout {
-  flex: 1;
-  max-width: 130px;
+.polaroid {
+  background: #fff;
+  padding: 18px 10px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
   position: relative;
-  filter: sepia(0.15);
+  flex-shrink: 0;
+}
+
+.polaroid-left {
+  transform: translateY(-80px) rotate(-16deg);
+  margin-right: -5px;
+  z-index: 0;
+}
+
+.polaroid-right {
+  transform: rotate(10deg);
+  margin-left: -5px;
+  z-index: 1;
+}
+
+.polaroid-label {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-script);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.polaroid-label::after {
+  content: ' ↓';
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.polaroid-img-wrap {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.polaroid-img-wrap .photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1);
+}
+
+.polaroid-name.script {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  text-align: center;
+  margin: 8px 0 0;
+  line-height: 1.1;
 }
 
 @media (min-width: 900px) {
-  .photo-cutout {
-    max-width: 150px;
+  .polaroid-img-wrap {
+    width: 140px;
+    height: 140px;
   }
-}
 
-/* Немного неровный контур — как вырезка */
-.photo-cutout.photo-left {
-  clip-path: polygon(0 2%, 8% 0, 18% 2%, 28% 0, 42% 3%, 55% 0, 70% 2%, 82% 0, 95% 2%, 100% 8%, 100% 92%, 95% 98%, 85% 100%, 70% 98%, 55% 100%, 40% 97%, 25% 100%, 12% 98%, 0 95%);
-  outline: 2px solid var(--accent-soft);
-  outline-offset: 2px;
-}
+  .polaroid {
+    padding: 20px 12px 16px;
+  }
 
-.photo-cutout.photo-right {
-  clip-path: polygon(5% 0, 18% 2%, 30% 0, 45% 2%, 60% 0, 75% 2%, 90% 0, 100% 5%, 100% 90%, 92% 100%, 78% 98%, 62% 100%, 48% 98%, 32% 100%, 18% 98%, 5% 100%, 0 88%);
-  outline: 2px solid var(--accent-soft);
-  outline-offset: 2px;
-}
+  .polaroid-left {
+    margin-right: -24px;
+  }
 
-.photo-cutout .photo-img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  display: block;
+  .polaroid-right {
+    margin-left: -24px;
+  }
+
+  .polaroid-name.script {
+    font-size: 1.4rem;
+  }
 }
 
 /* Полоса «Вы приглашены» */
@@ -228,17 +289,18 @@ body {
   background: var(--accent);
   color: var(--white);
   font-family: var(--font-script);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 6px 6px;
-  margin: 0 -4px 10px;
+  margin: 0 -4px 20px;
   letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
 @media (min-width: 900px) {
   .invitation-band {
     font-size: 1rem;
-    padding: 12px 18px;
+    padding: 8px 8px;
   }
 }
 
@@ -350,6 +412,77 @@ body {
 
 .script {
   font-family: var(--font-script);
+}
+
+/* Блок «Место»: полароид на всю ширину (как календарь), адрес под фото в полароиде */
+.location-block {
+  margin-top: 28px;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.location-title.script {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+
+.polaroid.polaroid-straight {
+  display: block;
+  width: 100%;
+  transform: none;
+  margin: 0 0 16px;
+  padding: 14px 14px 20px;
+  box-sizing: border-box;
+}
+
+.polaroid-straight .polaroid-img-wrap {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  max-height: 220px;
+}
+
+.polaroid-straight .photo-img {
+  filter: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-straight .location-address {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 8px 0 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.location-btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--accent);
+  padding: 12px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(183, 28, 92, 0.25);
+}
+
+.location-btn:hover {
+  background: var(--accent-soft);
+}
+
+.location-btn:active {
+  transform: scale(0.98);
 }
 
 /* ===== Оставшаяся часть: обёртка секций ===== */
@@ -583,4 +716,70 @@ body {
   bottom: 12px;
   right: 14px;
   margin: 0;
+}
+
+/* Блок «До нашей встречи осталось» — обратный отсчёт */
+.countdown-block {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px 20px 48px;
+  text-align: center;
+}
+
+.countdown-title.script {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 1.75rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 0 24px;
+}
+
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+}
+
+.countdown-value {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+@media (min-width: 600px) {
+  .countdown-value {
+    font-size: 2.5rem;
+  }
+}
+
+/* Завершающая фраза «Ждём вас!» */
+.closing-phrase.script {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  text-align: center;
+  margin: 0 auto 56px;
+  padding: 0 20px;
+  max-width: 920px;
+  line-height: 1.3;
 }

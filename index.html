@@ -30,13 +30,21 @@
       <span class="quote quote-right">— не буду я!</span>
     </div>
 
-    <!-- Детские фото с «вырезанным» контуром -->
-    <div class="photos">
-      <div class="photo-cutout photo-left">
-        <img src="assets/1.jpg" alt="" class="photo-img">
+    <!-- Детские фото в стиле фотоплёнки / полароид -->
+    <div class="photos polaroid-strip">
+      <div class="polaroid polaroid-left">
+        <span class="polaroid-label">Невеста</span>
+        <div class="polaroid-img-wrap">
+          <img src="assets/1.jpg" alt="" class="photo-img">
+        </div>
+        <p class="polaroid-name script">Оля</p>
       </div>
-      <div class="photo-cutout photo-right">
-        <img src="assets/2.jpg" alt="" class="photo-img">
+      <div class="polaroid polaroid-right">
+        <span class="polaroid-label">Жених</span>
+        <div class="polaroid-img-wrap">
+          <img src="assets/2.jpg" alt="" class="photo-img">
+        </div>
+        <p class="polaroid-name script">Рамиль</p>
       </div>
     </div>
 
@@ -63,6 +71,19 @@
       <div class="calendar-grid" id="calendar-grid"></div>
       <p class="save-the-date script">сохраняйте дату</p>
     </div>
+
+    <!-- Место: полароид на всю ширину, адрес под фото в полароиде, кнопка карты -->
+    <section class="location-block">
+      <h2 class="location-title script">Место</h2>
+      <div class="polaroid polaroid-straight">
+        <div class="polaroid-img-wrap">
+          <img src="assets/3.jpg" alt="Место проведения" class="photo-img">
+        </div>
+        <p class="location-address">Москва, Ферганская ул., вл. 8-10</p>
+          <p class="location-address">Ресторан White Hall</p>
+      </div>
+      <a href="https://yandex.ru/maps/org/white_hall/144014044551/?ll=37.804091%2C55.709547&z=15" target="_blank" rel="noopener noreferrer" class="location-btn">Открыть в Яндекс Картах</a>
+    </section>
   </div>
 
   <!-- Оставшаяся часть: Тайминг, Дресс-Код, Пожелания -->
@@ -127,6 +148,31 @@
     </section>
   </div>
   </div>
+
+  <!-- До нашей встречи осталось -->
+  <section class="countdown-block">
+    <h2 class="countdown-title script">До нашей встречи осталось</h2>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item">
+        <span class="countdown-value" id="countdown-days">0</span>
+        <span class="countdown-label">дней</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="countdown-hours">0</span>
+        <span class="countdown-label">часов</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="countdown-minutes">0</span>
+        <span class="countdown-label">минут</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-value" id="countdown-seconds">0</span>
+        <span class="countdown-label">секунд</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="closing-phrase script">Ждём вас!</p>
 
   <script src="script.js"></script>
 </body>

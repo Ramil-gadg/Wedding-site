@@ -8,7 +8,7 @@
   --brown-sugar: #A6896E;
   --chocolate: #6B4F3F;
   --cream: #FFF9F2;
-  --white-soft: #FFFFFF;
+  --white-soft: #f8f5f5;
   --text-dark: #3D2E24;
   --text-soft: #5E4B3C;
   
@@ -539,14 +539,14 @@ body {
 
 .section-dresscode .polaroid-straight {
   padding: 0;
-  background: transparent;
+  /* background: transparent; */
   box-shadow: none;
   margin-bottom: 0;
 }
 
 .section-dresscode .polaroid-img-wrap {
-  border-radius: 16px;
-  border: 1px solid var(--taupe-light);
+  /* border-radius: 16px; */
+  /* border: 1px solid var(--taupe-light); */
   max-height: 300px;
 }
 
@@ -555,9 +555,9 @@ body {
   color: var(--text-soft);
   padding: 24px 12px 12px;
   margin: 0;
-  background: var(--cream);
-  border-radius: 0 0 20px 20px;
-  line-height: 1.6;
+  /* background: var(--cream); */
+  /* border-radius: 0 0 20px 20px; */
+  /* line-height: 1.6; */
 }
 
 /* Пожелания */
@@ -681,7 +681,8 @@ body {
   font-weight: 600;
   color: var(--dusty-rose);
   line-height: 1;
-  background: var(--sand);
+  background: var(--cream);
+  border: 0.5px solid var(--taupe-light);
   padding: 16px 12px;
   border-radius: 16px;
   min-width: 100px;

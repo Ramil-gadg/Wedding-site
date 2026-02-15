@@ -84,95 +84,79 @@
       </div>
       <a href="https://yandex.ru/maps/org/white_hall/144014044551/?ll=37.804091%2C55.709547&z=15" target="_blank" rel="noopener noreferrer" class="location-btn">Открыть в Яндекс Картах</a>
     </section>
-  </div>
-
-  <!-- Оставшаяся часть: Тайминг, Дресс-Код, Пожелания -->
-  <div class="sections-wrap">
-    <!-- Тайминг -->
-    <section class="section section-timing">
-      <h2 class="section-title script">Тайминг</h2>
-      <p class="section-note script">план нашего дня</p>
-      <div class="timeline-wrap">
-        <svg class="timeline-squiggle" viewBox="0 0 80 220" preserveAspectRatio="none" aria-hidden="true">
-          <path class="squiggle-path" d="M70,0 Q50,50 70,80 Q90,110 55,140 Q20,170 65,200 Q110,220 70,220" fill="none" stroke="currentColor" stroke-width="2"/>
-        </svg>
-        <div class="timeline-events">
-          <div class="timeline-item">
-            <span class="timeline-heart">♥</span>
-            <span class="timeline-time">15:00</span>
-            <span class="timeline-desc">сбор гостей</span>
+        <!-- Тайминг -->
+        <section class="section section-timing">
+          <h2 class="section-title script">Тайминг</h2>
+          <p class="section-note script">план нашего дня</p>
+          <div class="timeline-wrap">
+            <div class="timeline-events">
+              <div class="timeline-item">
+                <span class="timeline-heart">♥</span>
+                <span class="timeline-time">16:00</span>
+                <span class="timeline-desc">Сбор гостей/Фуршет</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-heart">♥</span>
+                <span class="timeline-time">17:00</span>
+                <span class="timeline-desc">Начало</span>
+              </div>
+            </div>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-heart">♥</span>
-            <span class="timeline-time">16:00</span>
-            <span class="timeline-desc">церемония</span>
+        </section>
+    
+        <!-- Дресс-Код -->
+        <section class="section section-dresscode">
+          <h2 class="section-title script">Дресс-Код</h2>
+          <div class="polaroid polaroid-straight">
+            <div class="polaroid-img-wrap">
+              <img src="assets/4.jpg" alt="Дресс-Код" class="photo-img">
+            </div>
+            <p class="location-address">Мы хотим создать особенную атмосферу на нашем торжестве, поэтому будем благодарны, если вы учтете дресс-код при выборе наряда</p>
           </div>
-          <div class="timeline-item">
-            <span class="timeline-heart">♥</span>
-            <span class="timeline-time">17:00</span>
-            <span class="timeline-desc">банкет</span>
+        </section>
+    
+        <!-- Пожелания -->
+        <section class="section section-wishes">
+          <div class="line-heart-sep">
+            <span class="line"></span>
+            <span class="heart">♥</span>
+            <span class="line"></span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Дресс-Код -->
-    <section class="section section-dresscode">
-      <h2 class="section-title script">Дресс-Код</h2>
-      <div class="dresscode-paper taped-paper">
-        <div class="paper-tape"></div>
-        <p class="dresscode-text">Мы стараемся сделать праздник красивым и стильным и будем рады, если вы поддержите цветовую гамму нашей свадьбы.</p>
-        <div class="color-swatches">
-          <span class="swatch" style="--c: #FCDDE2;"></span>
-          <span class="swatch" style="--c: #F8B4CC;"></span>
-          <span class="swatch" style="--c: #F7F0E6;"></span>
-          <span class="swatch" style="--c: #D82F7B;"></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Пожелания -->
-    <section class="section section-wishes">
-      <div class="line-heart-sep">
-        <span class="line"></span>
-        <span class="heart">♥</span>
-        <span class="line"></span>
-      </div>
-      <h2 class="section-title script">Пожелания</h2>
-      <p class="wishes-text">Дорогие гости, вы можете не переживать по поводу подарка, мы будем рады вашим пожеланиям в конвертах.</p>
-      <div class="envelope-block taped-paper">
-        <div class="paper-tape envelope-tape"></div>
-        <div class="envelope-icon">✉</div>
-        <span class="envelope-watermark script">хорошо на празднике</span>
-      </div>
-    </section>
+          <h2 class="section-title script">Пожелания</h2>
+          <p class="wishes-text">Дорогие гости. Если хотите сделать нам ценный и нужный подарок, мы будем признательный за вклад в бюджет нашей молодой семьи</p>
+          <div class="envelope-block taped-paper">
+            <div class="paper-tape envelope-tape"></div>
+            <div class="envelope-icon">✉</div>
+            <span class="envelope-watermark script">хорошо на празднике</span>
+          </div>
+        </section>
+        <section class="countdown-block">
+          <h2 class="countdown-title script">До нашей встречи осталось</h2>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-days">0</span>
+              <span class="countdown-label">дней</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-hours">0</span>
+              <span class="countdown-label">часов</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-minutes">0</span>
+              <span class="countdown-label">минут</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-seconds">0</span>
+              <span class="countdown-label">секунд</span>
+            </div>
+          </div>
+        </section>
+      
+        <p class="closing-phrase script">Ждём вас!</p>
   </div>
   </div>
 
   <!-- До нашей встречи осталось -->
-  <section class="countdown-block">
-    <h2 class="countdown-title script">До нашей встречи осталось</h2>
-    <div class="countdown" id="countdown">
-      <div class="countdown-item">
-        <span class="countdown-value" id="countdown-days">0</span>
-        <span class="countdown-label">дней</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-value" id="countdown-hours">0</span>
-        <span class="countdown-label">часов</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-value" id="countdown-minutes">0</span>
-        <span class="countdown-label">минут</span>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-value" id="countdown-seconds">0</span>
-        <span class="countdown-label">секунд</span>
-      </div>
-    </div>
-  </section>
-
-  <p class="closing-phrase script">Ждём вас!</p>
 
   <script src="script.js"></script>
 </body>

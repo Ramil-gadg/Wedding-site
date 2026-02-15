@@ -82,29 +82,6 @@ body {
   opacity: 0.6;
 }
 
-.subtitle {
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--text-soft);
-  text-align: center;
-  margin: 8px 0 4px;
-  letter-spacing: 0.5px;
-}
-
-.headline {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--chocolate);
-  text-align: center;
-  margin: 0 0 32px;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
-}
-
 /* Цитаты - над фотографиями */
 .quotes {
   display: flex;
@@ -115,7 +92,7 @@ body {
   margin-top: -20px;
   position: relative;
   z-index: 10;
-  padding: 0 50px;
+  padding: 10px 50px;
   width: 100%;
 }
 
@@ -133,12 +110,12 @@ body {
 
 .quote-left {
   text-align: left;
-  transform: rotate(-5deg);
+  transform: rotate(-10deg);
 }
 
 .quote-right {
   text-align: right;
-  transform: rotate(5deg);
+  transform: rotate(14deg);
 }
 
 /* Фото в стиле фотоплёнки / полароид */
@@ -164,11 +141,16 @@ body {
 }
 
 .polaroid-left {
-  transform: rotate(-5deg);
+  transform: rotate(-10deg);
+  margin-right: -5px;
+  z-index: 0;
 }
 
 .polaroid-right {
-  transform: rotate(5deg);
+  transform: translateY(-30px) rotate(14deg);
+  margin-left: -10px;
+  z-index: 1;
+
 }
 
 .polaroid-label {
@@ -190,8 +172,8 @@ body {
 }
 
 .polaroid-img-wrap {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
   background: var(--taupe-light);
   border: 1px solid var(--taupe);
@@ -236,7 +218,7 @@ body {
 /* Текст приглашения */
 .message {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .message p {
@@ -244,16 +226,6 @@ body {
   font-size: 18px;
   color: var(--text-soft);
   line-height: 1.6;
-}
-
-.wedding-date {
-  font-family: var(--font-display);
-  font-size: 36px;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--chocolate);
-  margin: 20px 0 0 !important;
-  letter-spacing: 1px;
 }
 
 /* Календарь */
@@ -264,6 +236,7 @@ body {
   border-radius: 24px;
   padding: 32px 24px 28px;
   box-shadow: 0 10px 25px -12px var(--brown-sugar);
+  margin-top: 40px;
   margin-bottom: 40px;
   width: 100%;
 }
@@ -537,17 +510,11 @@ body {
   width: 100%;
 }
 
-.section-dresscode .polaroid-straight {
-  padding: 0;
-  /* background: transparent; */
-  box-shadow: none;
-  margin-bottom: 0;
-}
 
 .section-dresscode .polaroid-img-wrap {
   /* border-radius: 16px; */
   /* border: 1px solid var(--taupe-light); */
-  max-height: 300px;
+  max-height: 700px;
 }
 
 .section-dresscode .location-address {
